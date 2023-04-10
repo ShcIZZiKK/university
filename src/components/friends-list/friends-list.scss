@@ -1,0 +1,99 @@
+.friends-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 63px;
+    background-image: url("../assets/images/panels/friends.png");
+    background-size: contain;
+    box-shadow: 4px 4px 5px 0 rgba($dark, 0.5);
+    border-radius: 17px;
+
+    .friends-list__button-left,
+    .friends-list__button-right {
+        @include background-default;
+        width: 16px;
+        height: 50px;
+        cursor: pointer;
+        box-shadow: none;
+
+        &:disabled {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        &:not(:disabled) {
+            &:active {
+                box-shadow: none;
+                transform: translateY(0.5px);
+            }
+        }
+    }
+
+    .friends-list__button-left {
+        margin-left: 9px;
+        background-image: url("../assets/images/icons/arrow-left.png");
+    }
+
+    .friends-list__button-right {
+        background-image: url("../assets/images/icons/arrow-right.png");
+        margin-right: 9px;
+    }
+
+    .friends-list__slider {
+        width: 480px;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .friends-list__slides {
+        display: flex;
+        align-items: center;
+        width: 9999px;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        transition: transform 0.15s;
+        list-style: none;
+
+        li {
+            @include background-default;
+            position: relative;
+            width: 60px;
+            height: 50px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            background-image: url("../assets/images/panels/friend.png");
+
+            &:hover {
+                button {
+                    transform: scale(1)
+                }
+            }
+
+            button {
+                @include background-default;
+                position: absolute;
+                width: 23px;
+                height: 23px;
+                right: -4px;
+                top: -4px;
+                background-image: url("../assets/images/icons/icon-plus.png");
+                box-shadow: none;
+                border-radius: 0;
+                transition: 0.1s;
+                transform: scale(0);
+            }
+
+            img {
+                max-width: 50px;
+                max-height: 38px;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                margin-bottom: 2px;
+            }
+        }
+    }
+}

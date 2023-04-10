@@ -1,0 +1,26 @@
+// МИКСИНЫ
+// Загрузка шрифтов
+$path: "../assets/fonts/";
+
+@mixin font($family, $src, $weight: false, $style: false) {
+    @font-face {
+        font-display: swap;
+        font-family: quote($family);
+        src: url($path + $src + ".woff2") format("woff2"), url($path + $src + ".woff") format("woff");
+
+        @if ($weight) {
+            font-weight: $weight;
+        }
+
+        @if ($style) {
+            font-style: $style;
+        }
+    }
+}
+
+// Добавление шрифтов
+@include font(Cambria, "cambria/Cambria", 400);
+@include font(Cambria, "cambria/Cambria-Bold", 700);
+
+// Переменные
+$main-font: "Cambria";

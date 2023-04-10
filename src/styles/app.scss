@@ -1,0 +1,62 @@
+@import "~normalize.css";
+
+// SETTINGS
+@import "settings/colors";
+@import "settings/font-family";
+
+// COMPONENTS
+@import "../components/panels/panels";
+@import "../components/friends-list/friends-list";
+@import "../components/popup/popup";
+@import "../components/rating/rating";
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $main-font;
+}
+
+button {
+    background: none;
+    border: none;
+    background-size: contain;
+    padding: 0;
+    cursor: pointer;
+
+    &:not(:disabled) {
+        &:active {
+            transform: translateY(2px);
+        }
+    }
+}
+
+.game {
+    position: relative;
+    width: 980px;
+    height: 630px;
+    margin: 0 auto;
+    background-image: url("../assets/images/backgrounds/background.png");
+    overflow: hidden;
+}
+
+.debugger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+
+    button {
+        padding: 10px;
+        border: 1px solid royalblue;
+    }
+
+    img {
+        position: fixed;
+    }
+}

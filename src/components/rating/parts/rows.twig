@@ -1,0 +1,10 @@
+{% for row in rows  %}
+    <li class="{{ row.class }}">
+        <span>{{ loop.index }}</span>
+        <span>
+            <img src="{{ row.img }}" />
+        </span>
+        <span>{{ row.name }} {{ row.lastName }}</span>
+        <span>{{ row.points }}</span>
+    </li>
+{% endfor %}
